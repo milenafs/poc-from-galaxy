@@ -1,50 +1,45 @@
-# React Template（⚡️）
+# React + TypeScript + Vite + Tailwind
 
-⚡️ A minimal React Vite starter template.
 
-## Feature
-
-- ⚡️ Fast - Build tools based on vite.
-- 👻 Small - Based on the smallest runnable build.
-- 💄 Prettier - Integrated Prettier to help you format the code.
-- ✅ Safety - Https is enabled by default.
-- 😎 Reliable - Integrated eslint and commitlint.
-- 🤖 Intelligent - Integrated renovate to help you maintain the dependent version.
-
-## Preview
-
-[![qekup8.png](https://s1.ax1x.com/2022/03/20/qekup8.png)](https://imgtu.com/i/qekup8)
-
-## Getting Started
-
-```bash
-npx degit lzm0x219/template-vite-react myapp
-
-cd myapp
-
-git init
+## Starting the project
+https://tailwindcss.com/docs/guides/vite
+```
+npm create vite@latest my-project -- --template react
+cd my-project
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 ```
 
-### Prerequisites
+```tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
 
-- `npm` and `pnpm` should be installed.
-- `git` should be installed (recommended v2.4.11 or higher)
+```index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
-### Available scripts
+```
+npm run dev
+```
 
-#### `pnpm dev`
-
-Runs the app in development mode.
-Open https://localhost:5173 to view it in the browser.
-
-The page will automatically reload if you make changes to the code.
-You will see the build errors and lint warnings in the console.
-
-#### `pnpm build`
-
-Builds the app for production to the `dist` folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.
-
-Your app is ready to be deployed.
+```App.jsx
+export default function App() {
+  return (
+    <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
+  )
+}
+```
