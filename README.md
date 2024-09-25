@@ -43,3 +43,8 @@ export default function App() {
   )
 }
 ```
+
+## Routes
+```
+npm i -D react-router-dom
+```
